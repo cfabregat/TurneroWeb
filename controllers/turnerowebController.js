@@ -19,6 +19,7 @@ exports.getTurno = async (req, res) => {
             res.status(404).json("No existe el turno seleccionado")
         }
         res.status(200).json( turno );
+        res.status(200).send() ;
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al intentar recuperar el turno seleccionado")
@@ -27,8 +28,8 @@ exports.getTurno = async (req, res) => {
 
 exports.createTurno = async (req,res) => {
     try {
-        await turnerowebService.createTurno(req.body)
-        res.status(200).send() ;
+        await turnerowebService.createTurno( req.body )
+        res.status(200).send("Turno creado") ;
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al crear el turno")

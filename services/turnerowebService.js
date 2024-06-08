@@ -12,7 +12,7 @@ exports.readTurno = () => {
 
 exports.getTurno = (id) => {
     try {
-        turnerowebRepository.getTurnoRepo(id);
+        return turnerowebRepository.getTurnoRepo(id);
     } catch( error) {
         console.log(error)        
     }

@@ -23,6 +23,8 @@ exports.getTurnoRepo = async (id) => {
 
 exports.createTurnoRepo = async (turno) => {
     try {
+        //  Deberia obtener el ultimo numero en esa categoria..
+        
         let new_turno = new Turno(turno);
         await new_turno.save();
     }catch(error){

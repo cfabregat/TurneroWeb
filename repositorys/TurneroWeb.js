@@ -29,4 +29,5 @@ const turnerowebSchema = mongoose.Schema(
     }
 );
 
+//                              Base de datos, Esquema
 module.exports = mongoose.model('TurneroWeb', turnerowebSchema);
