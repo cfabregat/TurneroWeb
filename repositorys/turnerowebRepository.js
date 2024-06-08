@@ -5,8 +5,8 @@ conectarDB() ;
 
 exports.readTurnoRepo = async () => {
     try {
-        let movies = await Turno.find() ;
-        return movies
+        let red_turno = await Turno.find() ;
+        return red_turno
     }catch(error){
         console.log(error)
     }
@@ -14,8 +14,8 @@ exports.readTurnoRepo = async () => {
 
 exports.getTurnoRepo = async (id) => {
     try {
-        let turno = await Turno.find({_id:id}) ;
-        return turno
+        let get_turno = await Turno.find({_id:id}) ;
+        return get_turno
     }catch(error){
         console.log(error)
     }

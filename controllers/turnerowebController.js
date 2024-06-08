@@ -1,10 +1,6 @@
-//lo de abajo no deberia ir...
-//const TurneroWebRepository = require('../repositorys/turnerowebRepository');
 const turnerowebService = require( '../services/turnerowebService');
 
 //  Controlador
-
-//CRUD (CREATE, READ, UPDATE, DELETE)
 
 exports.readTurno = async (req,res) => {
     try {

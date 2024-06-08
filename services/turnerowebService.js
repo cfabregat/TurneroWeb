@@ -4,7 +4,7 @@ const turnerowebRepository = require( '../repositorys/turnerowebRepository');
 
 exports.readTurno = () => {
     try {
-        turnerowebRepository.readTurnoRepo() ;
+        return turnerowebRepository.readTurnoRepo() ;
     } catch( error) {
         console.log(error)        
     }
@@ -12,7 +12,7 @@ exports.readTurno = () => {
 
 exports.getTurno = (id) => {
     try {
-        turnerowebRepository.getTurnosRepo(id);
+        turnerowebRepository.getTurnoRepo(id);
     } catch( error) {
         console.log(error)        
     }
@@ -20,7 +20,7 @@ exports.getTurno = (id) => {
 
 exports.createTurno = (turno) => {
     try {
-        turnerowebRepository.createTurnosRepo(turno)
+        turnerowebRepository.createTurnoRepo(turno)
     } catch( error) {
         console.log(error)        
     }
@@ -28,7 +28,7 @@ exports.createTurno = (turno) => {
 
 exports.updateTurno = (id,turno) => {
     try {
-        turnerowebRepository.updateTurnosRepo(id, turno)
+        turnerowebRepository.updateTurnoRepo(id, turno)
     } catch( error) {
         console.log(error)        
     }
