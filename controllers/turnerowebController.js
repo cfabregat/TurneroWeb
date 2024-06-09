@@ -38,23 +38,11 @@ exports.createTurno = async (req,res) => {
 
 exports.updateTurno = async (req,res) => {
     try {
-        const {nombre, genero, precio, descripcion} = req.body;
-        let id = req.params.id ;
-        let turno = await Turno.findById(id) ;
-        if(!turno){
-            res.json("No existe la película que sea actualizar")
-        }
-        turno.nombre = nombre ;
-        turno.genero = genero ;
-        turno.precio = precio ;
-        turno.descripcion = descripcion ;
-
-        fturno = await Turno.findOneAndUpdate({_id: id}, turno, {new: true}) ;
-        res.json( fturno ) ;
-        res.status(200).send() ;
+        await turnerowebService.updateTurno( req.params.id, req.body )
+        res.status(200).send("Turno actualizado") ;
     } catch(error){
         console.log(error)
-        res.status(500).send("Hubo un error al actualizar el turno")
+        res.status(500).send("Hubo un error al crear el turno")
     }
 }
 
@@ -64,8 +52,9 @@ exports.updateTurno = async (req,res) => {
  */
 exports.deleteTurno = async (req,res) => {
     try {
-        await turnerowebService.deleteMovies( req.params.id) ;
+        await turnerowebService.deleteTurno( req.params.id ) ;
         res.status(200).json("El turno se elimino con exito") ;
+        res.status(500).send();
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al eliminar el turno")
