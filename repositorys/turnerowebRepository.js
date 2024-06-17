@@ -34,8 +34,11 @@ exports.createTurnoRepo = async (turno) => {
     try {
         //  Deberia obtener el ultimo numero en esa categoria..
         let dato = await Turno.find( {"categoria": turno.categoria} ).sort({numero:-1}).limit(1) ;
-        let prox_numero = dato[0].numero + 1 ;
-        //console.log( prox_numero );    
+
+        let prox_numero = 1 ;
+        if( dato.length >0 ){
+            prox_numero = dato[0].numero + 1 ;
+        }
 
         turno.numero = prox_numero ;
         let new_turno = new Turno(turno);
