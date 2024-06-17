@@ -28,5 +28,6 @@ turnerowebRouter.patch('/cambiarcampo/:id/:campo/:valor', turnerowebController.c
 
 //  Elimina un turno específico
 turnerowebRouter.delete('/:id', turnerowebController.deleteTurno);
+turnerowebRouter.delete('/resetdia', turnerowebController.resetdia);
 
 module.exports = turnerowebRouter

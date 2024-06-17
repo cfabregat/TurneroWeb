@@ -108,7 +108,6 @@ exports.cambiarcampo = async (req,res) => {
     }
 }
 
-
 exports.deleteTurno = async (req,res) => {
     try {
         await turnerowebService.deleteTurno( req.params.id ) ;
@@ -116,5 +115,15 @@ exports.deleteTurno = async (req,res) => {
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al eliminar el turno")
+    }
+}
+
+exports.resetdia = async (req,res) => {
+    try {
+        await turnerowebService.resetdia() ;
+        res.status(200).send("Se eliminaron todos los turnos del día actual") ;
+    } catch(error){
+        console.log(error)
+        res.status(500).send("Hubo un error al eliminar todos los turnos del día actual")
     }
 }

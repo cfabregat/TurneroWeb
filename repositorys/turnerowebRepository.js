@@ -176,3 +176,16 @@ exports.deleteTurnoRepo = async (id) => {
         console.log(error)
     }
 }
+
+exports.resetdia = async (resetfecha) => {
+    try {
+        let del_turno = await Turno.deleteMany( { fecha: resetfecha } );
+        if( !del_turno ){
+            return 'No se encontro el turno';
+        } else {
+            return( del_turno ) ;
+        }
+    }catch(error){
+        console.log(error)
+    }
+}

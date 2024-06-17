@@ -94,3 +94,15 @@ exports.deleteTurno = (id) => {
         console.log(error)        
     }
 }
+
+exports.resetdia = () => {
+    try {
+        const now = new Date() ;
+        fecha = date.format(now, 'YYYY-MM-DD');
+        fecha = "16/06/2024" ;
+
+        turnerowebRepository.resetdia(fecha)
+    } catch( error) {
+        console.log(error)        
+    }
+}

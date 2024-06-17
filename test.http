@@ -43,6 +43,10 @@ DELETE http://127.0.0.1:3000/api/turneroweb/6664ff363e3f251d00868f1a HTTP/1.1
 
 ###
 
+DELETE http://127.0.0.1:3000/api/turneroweb/resetdia HTTP/1.1
+
+###
+
 GET http://127.0.0.1:3000/api/turneroweb/proximos/perros HTTP/1.1
 
 ###
