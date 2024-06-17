@@ -48,7 +48,7 @@ exports.createTurnoRepo = async (turno) => {
 exports.updateTurnoRepo = async (id,turno) => {
     try {
         let upd_turno = await Turno.findById(id) ;
-        if(!turno){
+        if(!upd_turno){
             res.json("No existe el turno a actualizar")
         }
         upd_turno.fecha = turno.fecha ;
@@ -59,6 +59,54 @@ exports.updateTurnoRepo = async (id,turno) => {
         upd_turno.estado = turno.estado ;
 
         fturno = await Turno.findOneAndUpdate({_id: id}, upd_turno, {new: true}) ;
+    } catch(error){
+        console.log(error)
+    }
+}
+
+exports.atendiendo = async (categoria,numero) => {
+    try {
+        let sea_turno = await Turno.findOne( {"categoria": categoria, "numero": numero} ) ;
+        if(!sea_turno){
+            console.log("No existe el turno a actualizar")
+        }
+        sea_turno.estado = "atendiendo" ;
+        const upt_turno = await Turno.findOneAndUpdate( { _id: sea_turno._id }, sea_turno, { new: true } );
+        if (!upt_turno) {
+            console.log('Error al actualizar el estado');
+          }
+    } catch(error){
+        console.log(error)
+    }
+}
+
+exports.atendido = async (categoria,numero) => {
+    try {
+        let sea_turno = await Turno.findOne( {"categoria": categoria, "numero": numero} ) ;
+        if(!sea_turno){
+            console.log("No existe el turno a actualizar")
+        }
+        sea_turno.estado = "atendido" ;
+        const upt_turno = await Turno.findOneAndUpdate( { _id: sea_turno._id }, sea_turno, { new: true } );
+        if (!upt_turno) {
+            console.log('Error al actualizar el estado');
+          }
+    } catch(error){
+        console.log(error)
+    }
+}
+
+exports.cancelado = async (categoria,numero) => {
+    try {
+        let sea_turno = await Turno.findOne( {"categoria": categoria, "numero": numero} ) ;
+        if(!sea_turno){
+            console.log("No existe el turno a actualizar")
+        }
+        sea_turno.estado = "cancelado" ;
+        const upt_turno = await Turno.findOneAndUpdate( { _id: sea_turno._id }, sea_turno, { new: true } );
+        if (!upt_turno) {
+            console.log('Error al actualizar el estado');
+          }
     } catch(error){
         console.log(error)
     }

@@ -42,6 +42,30 @@ exports.updateTurno = (id,turno) => {
     }
 }
 
+exports.atendiendo = (categoria,numero) => {
+    try {
+        turnerowebRepository.atendiendo(categoria, numero)
+    } catch( error) {
+        console.log(error)        
+    }
+}
+
+exports.atendido = (categoria,numero) => {
+    try {
+        turnerowebRepository.atendido(categoria, numero)
+    } catch( error) {
+        console.log(error)        
+    }
+}
+
+exports.cancelado = (categoria,numero) => {
+    try {
+        turnerowebRepository.cancelado(categoria, numero)
+    } catch( error) {
+        console.log(error)        
+    }
+}
+
 exports.deleteTurno = (id) => {
     try {
         turnerowebRepository.deleteTurnoRepo(id)

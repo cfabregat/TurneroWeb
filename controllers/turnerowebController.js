@@ -28,7 +28,7 @@ exports.getTurno = async (req, res) => {
 
 exports.proximos = async (req,res) => { 
     try {
-        let turno = await turnerowebService.proximos( req.params.cat ) ;
+        let turno = await turnerowebService.proximos( req.params.categoria ) ;
         if( !turno ){
             res.status(404).json("No existe el turno seleccionado")
         }
@@ -59,6 +59,36 @@ exports.updateTurno = async (req,res) => {
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al crear el turno")
+    }
+}
+
+exports.atendiendo = async (req,res) => {
+    try {
+        await turnerowebService.atendiendo( req.params.categoria, req.params.numero )
+        res.status(200).send("Turno actualizado") ;
+    } catch(error){
+        console.log(error)
+        res.status(500).send("Hubo un error al cambiar el estado del turno a atendiendo")
+    }
+}
+
+exports.atendido = async (req,res) => {
+    try {
+        await turnerowebService.atendido( req.params.categoria, req.params.numero )
+        res.status(200).send("Turno actualizado") ;
+    } catch(error){
+        console.log(error)
+        res.status(500).send("Hubo un error al cambiar el estado del turno a atendido")
+    }
+}
+
+exports.cancelado = async (req,res) => {
+    try {
+        await turnerowebService.cancelado( req.params.categoria, req.params.numero )
+        res.status(200).send("Turno actualizado") ;
+    } catch(error){
+        console.log(error)
+        res.status(500).send("Hubo un error al cambiar el estado del turno a cancelado")
     }
 }
 
