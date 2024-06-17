@@ -98,6 +98,17 @@ exports.cancelado = async (req,res) => {
     }
 }
 
+exports.cambiarcampo = async (req,res) => {
+    try {
+        let ret = await turnerowebService.cambiarcampo( req.params.id, req.params.campo, req.params.valor )
+        res.status(200).json( ret ) ;
+    } catch(error){
+        console.log(error)
+        res.status(500).send("Hubo un error al cambiar el nombre")
+    }
+}
+
+
 exports.deleteTurno = async (req,res) => {
     try {
         await turnerowebService.deleteTurno( req.params.id ) ;

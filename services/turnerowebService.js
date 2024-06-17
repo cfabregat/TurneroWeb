@@ -79,6 +79,14 @@ exports.cancelado = (categoria,numero) => {
     }
 }
 
+exports.cambiarcampo = (id, campo, valor) => {
+    try {
+        return turnerowebRepository.cambiarcampo(id, campo, valor)
+    } catch( error) {
+        console.log(error)        
+    }
+}
+
 exports.deleteTurno = (id) => {
     try {
         turnerowebRepository.deleteTurnoRepo(id)

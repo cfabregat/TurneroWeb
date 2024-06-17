@@ -24,6 +24,8 @@ turnerowebRouter.put('/atendiendo/:categoria/:numero', turnerowebController.aten
 turnerowebRouter.put('/atendido/:categoria/:numero', turnerowebController.atendido);
 turnerowebRouter.put('/cancelado/:categoria/:numero', turnerowebController.cancelado);
 
+turnerowebRouter.patch('/cambiarcampo/:id/:campo/:valor', turnerowebController.cambiarcampo);
+
 //  Elimina un turno específico
 turnerowebRouter.delete('/:id', turnerowebController.deleteTurno);
 

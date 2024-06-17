@@ -138,6 +138,33 @@ exports.cancelado = async (categoria,numero) => {
     }
 }
 
+exports.cambiarcampo = async (id,campo,valor) => {
+    try {
+        let upd_turno = await Turno.findById(id) ;
+        if(!upd_turno){
+            return( { error: 1, descripcion: "No existe el turno a actualizar", turno: [] }  )
+        }
+        switch( campo ){
+            case "fecha":       upd_turno.fecha = valor ;            break ;
+            case "hora":        upd_turno.hora =valor ;              break ;
+            case "categoria":   upd_turno.categoria = valor ;        break ;
+            case "numero":      upd_turno.numero = valor ;           break ;
+            case "nombre":      upd_turno.nombre = valor ;           break ;
+            case "estado":      upd_turno.estado = valor ;           break ;
+        }
+
+        fturno = await Turno.findOneAndUpdate({_id: id}, upd_turno, {new: true}) ;
+        if(!fturno){
+            return( { error: 1, descripcion: "No existe el turno a actualizar", turno: [] } )
+        } else {
+            return( { error: 0, descripcion: "Operacion saticfactoria", turno: [ fturno ] } )
+        }
+        
+    } catch(error){
+        console.log(error)
+    }
+}
+
 exports.deleteTurnoRepo = async (id) => {
     try {
         let del_turno = await Turno.findById(id);
