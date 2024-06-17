@@ -21,6 +21,15 @@ exports.getTurnoRepo = async (id) => {
     }
 }
 
+exports.proximos = async (cat) => {
+    try {
+        let get_turno = await Turno.find({categoria:cat}) ;
+        return get_turno
+    }catch(error){
+        console.log(error)
+    }
+}
+
 exports.createTurnoRepo = async (turno) => {
     try {
         //  Deberia obtener el ultimo numero en esa categoria..

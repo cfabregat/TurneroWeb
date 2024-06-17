@@ -18,6 +18,14 @@ exports.getTurno = (id) => {
     }
 }
 
+exports.proximos = (cat) => {
+    try {
+        return turnerowebRepository.proximos(cat);
+    } catch( error) {
+        console.log(error)        
+    }
+}
+
 exports.createTurno = (turno) => {
     try {
         turnerowebRepository.createTurnoRepo(turno)

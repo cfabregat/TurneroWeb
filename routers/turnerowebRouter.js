@@ -8,6 +8,9 @@ turnerowebRouter.use(express.json()) ;
 
 turnerowebRouter.get('/', turnerowebController.readTurno);
 turnerowebRouter.get('/:id', turnerowebController.getTurno);
+//  Devuelve los proximos turnos por categoria
+turnerowebRouter.get('/proximos/:cat', turnerowebController.proximos);
+
 
 turnerowebRouter.post('/', turnerowebController.createTurno);
 

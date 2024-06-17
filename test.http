@@ -40,3 +40,20 @@ Content-Type: application/json
 ###
 
 DELETE http://127.0.0.1:3000/api/turneroweb/6664ff363e3f251d00868f1a HTTP/1.1
+
+
+###
+
+GET http://127.0.0.1:3000/api/turneroweb/proximos/gatos HTTP/1.1
+
+###
+
+GET http://127.0.0.1:3000/api/turneroweb/atendiendo/1 HTTP/1.1
+
+###
+
+GET http://127.0.0.1:3000/api/turneroweb/atendido/1 HTTP/1.1
+
+###
+
+GET http://127.0.0.1:3000/api/turneroweb/cancelado/1 HTTP/1.1
