@@ -21,14 +21,14 @@ Content-Type: application/json
 
 ###
 
-PUT http://127.0.0.1:3000/api/turneroweb/666500fc27eaf1c6bbad6f26 HTTP/1.1
+PUT http://127.0.0.1:3000/api/turneroweb/6666553f2aa277402bcc028a HTTP/1.1
 Content-Type: application/json
 
 {
-    "fecha": "2024-06-08",
+    "fecha": "2024-06-09",
     "hora": "17:47",
     "categoria": "perros",
-    "numero": 0,
+    "numero": 1,
     "nombre": "virginia",
     "estado": "en espera"
 }

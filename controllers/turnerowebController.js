@@ -50,8 +50,8 @@ exports.createTurno = async (req,res) => {
 
 exports.updateTurno = async (req,res) => {
     try {
-        await turnerowebService.updateTurno( req.params.id, req.body )
-        res.status(200).send("Turno actualizado") ;
+        let ret = await turnerowebService.updateTurno( req.params.id, req.body )
+        res.status(200).json( ret ) ;
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al crear el turno")

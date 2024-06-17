@@ -41,7 +41,7 @@ exports.createTurno = (turno) => {
 
 exports.updateTurno = (id,turno) => {
     try {
-        turnerowebRepository.updateTurnoRepo(id, turno)
+        return turnerowebRepository.updateTurnoRepo(id, turno)
     } catch( error) {
         console.log(error)        
     }

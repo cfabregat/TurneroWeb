@@ -53,7 +53,7 @@ exports.updateTurnoRepo = async (id,turno) => {
     try {
         let upd_turno = await Turno.findById(id) ;
         if(!upd_turno){
-            res.json("No existe el turno a actualizar")
+            return( { error: 1, descripcion: "No existe el turno a actualizar", turno: [] }  )
         }
         upd_turno.fecha = turno.fecha ;
         upd_turno.hora = turno.hora ;
@@ -63,6 +63,12 @@ exports.updateTurnoRepo = async (id,turno) => {
         upd_turno.estado = turno.estado ;
 
         fturno = await Turno.findOneAndUpdate({_id: id}, upd_turno, {new: true}) ;
+        if(!fturno){
+            return( { error: 1, descripcion: "No existe el turno a actualizar", turno: [] } )
+        } else {
+            return( { error: 0, descripcion: "Operacion saticfactoria", turno: [ fturno ] } )
+        }
+        
     } catch(error){
         console.log(error)
     }
