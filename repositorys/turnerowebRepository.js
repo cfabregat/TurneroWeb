@@ -23,7 +23,7 @@ exports.getTurnoRepo = async (id) => {
 
 exports.proximos = async (cat) => {
     try {
-        let get_turno = await Turno.find({categoria:cat}) ;
+        let get_turno = await Turno.find({categoria:cat, estado: "en espera"}) ;
         return get_turno
     }catch(error){
         console.log(error)
