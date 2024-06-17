@@ -27,7 +27,8 @@ turnerowebRouter.put('/cancelado/:categoria/:numero', turnerowebController.cance
 turnerowebRouter.patch('/cambiarcampo/:id/:campo/:valor', turnerowebController.cambiarcampo);
 
 //  Elimina un turno específico
-turnerowebRouter.delete('/:id', turnerowebController.deleteTurno);
 turnerowebRouter.delete('/resetdia', turnerowebController.resetdia);
+turnerowebRouter.delete('/:id', turnerowebController.deleteTurno);
+
 
 module.exports = turnerowebRouter

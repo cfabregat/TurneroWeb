@@ -120,8 +120,8 @@ exports.deleteTurno = async (req,res) => {
 
 exports.resetdia = async (req,res) => {
     try {
-        await turnerowebService.resetdia() ;
-        res.status(200).send("Se eliminaron todos los turnos del día actual") ;
+        let ret = await turnerowebService.resetdia() ;
+        res.status(200).json( ret ) ;
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al eliminar todos los turnos del día actual")
