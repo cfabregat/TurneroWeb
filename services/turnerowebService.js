@@ -1,4 +1,5 @@
 const turnerowebRepository = require( '../repositorys/turnerowebRepository');
+const date = require('date-and-time')
 
 //  Services
 
@@ -28,6 +29,10 @@ exports.proximos = (cat) => {
 
 exports.createTurno = (turno) => {
     try {
+        const now = new Date() ;
+        turno.fecha = date.format(now, 'YYYY-MM-DD');
+        turno.hora = date.format(now, 'HH:mm');
+       
         return turnerowebRepository.createTurnoRepo(turno)
     } catch( error) {
         console.log(error)        

@@ -14,7 +14,7 @@ Content-Type: application/json
     "hora": "17:47",
     "categoria": "gatos",
     "numero": 0,
-    "nombre": "valeria",
+    "nombre": "valeria1",
     "estado": "en espera"
 }
 
