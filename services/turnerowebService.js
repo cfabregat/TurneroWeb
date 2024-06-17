@@ -5,7 +5,10 @@ const date = require('date-and-time')
 
 exports.readTurno = () => {
     try {
-        return turnerowebRepository.readTurnoRepo() ;
+        const now = new Date() ;
+        fecha = date.format(now, 'YYYY-MM-DD');
+
+        return turnerowebRepository.readTurnoRepo( fecha ) ;
     } catch( error) {
         console.log(error)        
     }

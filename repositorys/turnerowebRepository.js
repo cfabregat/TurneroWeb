@@ -3,9 +3,9 @@ const conectarDB = require( '../db/db') ;
 
 conectarDB() ;
 
-exports.readTurnoRepo = async () => {
+exports.readTurnoRepo = async ( fecha ) => {
     try {
-        let red_turno = await Turno.find() ;
+        let red_turno = await Turno.find( { fecha: fecha}) ;
         return red_turno
     }catch(error){
         console.log(error)
