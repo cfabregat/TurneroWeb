@@ -13,6 +13,10 @@ app.get('/', (req,res) => {
     res.send('Este es el servidor del TurneroWeb')
 });
 
+app.use((req, res) => {
+    res.status(404).send('La ruta especificada no está implementada');
+});
+
 app.listen(PORT, () => {
     console.log(`El servidor esta escuhando en el puerto ${PORT}`)
 });
