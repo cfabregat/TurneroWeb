@@ -62,6 +62,16 @@ exports.updateTurno = async (req,res) => {
     }
 }
 
+exports.enespera = async (req,res) => {
+    try {
+        await turnerowebService.enespera( req.params.categoria, req.params.numero )
+        res.status(200).send("Turno actualizado") ;
+    } catch(error){
+        console.log(error)
+        res.status(500).send("Hubo un error al cambiar el estado del turno a enespera")
+    }
+}
+
 exports.atendiendo = async (req,res) => {
     try {
         await turnerowebService.atendiendo( req.params.categoria, req.params.numero )

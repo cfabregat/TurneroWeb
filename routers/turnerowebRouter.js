@@ -15,6 +15,7 @@ turnerowebRouter.post('/', turnerowebController.createTurno);
 
 turnerowebRouter.put('/:id', turnerowebController.updateTurno);
 //  Cambia el estado de un turno por categoria y numero
+turnerowebRouter.put('/enespera/:categoria/:numero', turnerowebController.enespera);
 turnerowebRouter.put('/atendiendo/:categoria/:numero', turnerowebController.atendiendo);
 turnerowebRouter.put('/atendido/:categoria/:numero', turnerowebController.atendido);
 turnerowebRouter.put('/cancelado/:categoria/:numero', turnerowebController.cancelado);

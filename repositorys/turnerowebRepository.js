@@ -64,6 +64,22 @@ exports.updateTurnoRepo = async (id,turno) => {
     }
 }
 
+exports.enespera = async (categoria,numero) => {
+    try {
+        let sea_turno = await Turno.findOne( {"categoria": categoria, "numero": numero} ) ;
+        if(!sea_turno){
+            console.log("No existe el turno a actualizar")
+        }
+        sea_turno.estado = "en espera" ;
+        const upt_turno = await Turno.findOneAndUpdate( { _id: sea_turno._id }, sea_turno, { new: true } );
+        if (!upt_turno) {
+            console.log('Error al actualizar el estado');
+          }
+    } catch(error){
+        console.log(error)
+    }
+}
+
 exports.atendiendo = async (categoria,numero) => {
     try {
         let sea_turno = await Turno.findOne( {"categoria": categoria, "numero": numero} ) ;

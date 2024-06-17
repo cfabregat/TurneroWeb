@@ -42,6 +42,14 @@ exports.updateTurno = (id,turno) => {
     }
 }
 
+exports.enespera = (categoria,numero) => {
+    try {
+        turnerowebRepository.enespera(categoria, numero)
+    } catch( error) {
+        console.log(error)        
+    }
+}
+
 exports.atendiendo = (categoria,numero) => {
     try {
         turnerowebRepository.atendiendo(categoria, numero)

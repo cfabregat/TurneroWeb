@@ -47,6 +47,10 @@ GET http://127.0.0.1:3000/api/turneroweb/proximos/perros HTTP/1.1
 
 ###
 
+PUT http://127.0.0.1:3000/api/turneroweb/enespera/perros/1 HTTP/1.1
+
+###
+
 PUT http://127.0.0.1:3000/api/turneroweb/atendiendo/perros/1 HTTP/1.1
 
 ###
