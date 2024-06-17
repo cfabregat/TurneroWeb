@@ -10,9 +10,9 @@ app.use(cors()) ;
 app.use('/api/turneroweb',turnerowebRouter);
 
 app.get('/', (req,res) => {
-    res.send('Este es el servidor TurneroWeb')
+    res.send('Este es el servidor del TurneroWeb')
 });
 
 app.listen(PORT, () => {
-        console.log(`El servidor esta escuhando en el puerto ${PORT}`)
+    console.log(`El servidor esta escuhando en el puerto ${PORT}`)
 });

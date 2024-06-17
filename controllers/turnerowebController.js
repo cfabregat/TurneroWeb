@@ -40,8 +40,6 @@ exports.proximos = async (req,res) => {
     }
 }
 
-    
-
 exports.createTurno = async (req,res) => {
     try {
         await turnerowebService.createTurno( req.body )
@@ -102,10 +100,6 @@ exports.cancelado = async (req,res) => {
     }
 }
 
-/**
- * Elimna la pelicula
- * Recibe como parametro de entrada por URL param el id de la pelicula.
- */
 exports.deleteTurno = async (req,res) => {
     try {
         await turnerowebService.deleteTurno( req.params.id ) ;
