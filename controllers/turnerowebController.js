@@ -5,7 +5,8 @@ const turnerowebService = require( '../services/turnerowebService');
 exports.readTurno = async (req,res) => {
     try {
         let turno = await turnerowebService.readTurno() ;
-        res.status(200).send(turno);
+        res.status(200).json( turno );
+        res.status(200).send();
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al intentar recuperar las peliculas")
