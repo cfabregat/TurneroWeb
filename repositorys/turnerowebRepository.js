@@ -39,7 +39,8 @@ exports.createTurnoRepo = async (turno) => {
 
         turno.numero = prox_numero ;
         let new_turno = new Turno(turno);
-        await new_turno.save();
+        let turno_creado = await new_turno.save() ;
+        return turno_creado;
     }catch(error){
         console.log(error)
     }

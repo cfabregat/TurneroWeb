@@ -40,9 +40,8 @@ exports.proximos = async (req,res) => {
 
 exports.createTurno = async (req,res) => {
     try {
-        await turnerowebService.createTurno( req.body )
-        //res.status(200).send("Turno creado" + req.body ) ;
-        res.status(200).json( { "fecha": "2024-06-08", "hora": "17:47", "categoria": "perros", "numero": 0, "nombre": "juan", "estado": "en espera" } ) ;
+        let ret = await turnerowebService.createTurno( req.body )
+        res.status(200).json( ret ) ;
     } catch(error){
         console.log(error)
         res.status(500).send("Hubo un error al crear el turno")

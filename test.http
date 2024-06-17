@@ -12,9 +12,9 @@ Content-Type: application/json
 {
     "fecha": "2024-06-08",
     "hora": "17:47",
-    "categoria": "perros",
+    "categoria": "gatos",
     "numero": 0,
-    "nombre": "juan",
+    "nombre": "valeria",
     "estado": "en espera"
 }
 

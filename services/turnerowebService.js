@@ -28,7 +28,7 @@ exports.proximos = (cat) => {
 
 exports.createTurno = (turno) => {
     try {
-        turnerowebRepository.createTurnoRepo(turno)
+        return turnerowebRepository.createTurnoRepo(turno)
     } catch( error) {
         console.log(error)        
     }
